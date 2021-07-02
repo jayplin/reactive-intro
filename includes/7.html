@@ -1,0 +1,59 @@
+<section>
+  <h2>Everything is a Stream</h2>
+</section>
+
+<section>
+  <div class="fragment">
+    <h4>observables</h4>
+  </div>
+  <div class="fragment">
+    <h4>observers</h4>
+  </div>
+  <div class="fragment">
+    <h4>operators</h4>
+  </div>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+    ## Observables
+    - attached to streams of data
+    - responsibe for processing that data and  deliver it <br> to <strong>Observers</strong>
+    - states
+      - <code>onNext</code>:  called when Observable emits a new data item
+      - <code>onError</code> 
+      - <code>onCompleted</code> 
+    ---
+    ## Observers
+    - subscriber to an Observable
+    - react to <code>onNext</code>, <code>onError</code>, <code>onCompleted</code> 
+    - angular example: have component state updating as the observable delivers new data <datagrid>
+    
+    ---
+    ## Operators
+    - manipulate data 
+    - change flow of data
+    - common to use multiple operators chained together
+    </datagrid> 
+    
+    </textarea
+  >
+</section>
+
+<section>
+  <h3>Operators</h3>
+  <ul style="width: 30%; float: left; margin-left: 15%">
+    <li>map</li>
+    <li>reduce</li>
+    <li>filter</li>
+    <li>scan</li>
+    <li>flatMap</li>
+  </ul>
+  <ul style="width: 30%; float: left">
+    <li>merge</li>
+    <li>zip</li>
+    <li>switch</li>
+    <li>and many more...</li>
+    <li class="fragment">many many many more</li>
+  </ul>
+</section>

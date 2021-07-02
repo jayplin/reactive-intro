@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Learn, build, and test Rx functions on Observables">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RxMarbles: Interactive diagrams of Rx Observables</title>
+    <link rel="stylesheet" href="lib/js/rxmarbles/css/normalize.min.css">
+    <link rel="stylesheet" href="lib/js/rxmarbles/css/main.css">
+    <script src="lib/js/rxmarbles/js/vendor/modernizr-2.6.2.min.js"></script>
+    <script defer src="lib/js/rxmarbles/js/vendor/CustomElements.js"></script>
+    <script defer src="lib/js/rxmarbles/js/element.js"></script>
+    <script src="js/jquery.min.js"></script>
+
+
+    <style>
+      html, body {
+          height: 95%;
+          font-family: "Courier New",sans-serif;
+          background-color: transparent;
+
+      }
+      .container {
+          position: relative;
+          top: 50%;
+          transform: translateY(-50%);
+          background-color: transparent;
+      }
+  </style>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div class="container"></div>
+
+    <script>
+
+      $(function() {
+          var type = queryParameters().type || 'merge';
+          $('.container').append('<rx-marbles key="' + type + '">');
+      });
+
+      function queryParameters() {
+          var result = {};
+
+          var params = window.location.search.split(/\?|\&/);
+
+          params.forEach( function(it) {
+              if (it) {
+                  var param = it.split("=");
+                  result[param[0]] = param[1];
+              }
+          });
+
+          return result;
+      }
+
+  </script>
+
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<section>
+  <h1 class="r-fit-text">imperative</h1>
+</section>
+<section>
+  <h4>
+    Imperative programing basically means <br />
+    that the code gets <strong> executed in order</strong> <br />
+    <em> statement by statement. </em>
+  </h4>
+</section>
+
+<section>
+  <h4>
+    If your debugger can clearly <strong> point to a statement </strong> in your
+    code and it's also clear what might be <em> the next line</em> where it
+    jumps to, then most likely you are using imperative programing.
+  </h4>
+</section>
+<section>
+  <div class="cols">
+    <div class="col">
+      <pre
+        style="height: 550px"
+      ><code  data-trim class="javascript" data-line-numbers="1|2-5|7|8|9|11-13|17-20|14-15">
+          let items = [];
+          items.push(1);
+          items.push(2);
+          items.push(3);
+          items.push(4);
+          
+          const newItems = items
+            .filter(item => item % 2 === 0)
+            .map(item => item + 0.5);
+          
+          newItems.forEach(item =>
+            print(item)
+          );
+          // Output: 2.5
+          // Output: 4.5
+          
+          items.push(5);
+          items.push(6);
+          items.push(7);
+          items.push(8); 
+  
+  
+            </code></pre>
+    </div>
+
+    <div class="col">
+      <div class="fragment" style="font-size: xx-large; padding-top: 10px">
+        <ol>
+          <li>we create an array</li>
+          <li>add some values to it,</li>
+          <li>
+            then create a new array which is the modified version of the
+            original one,
+          </li>
+          <li>console log the new array's items,</li>
+          <li>and finally it adds a few more values to the original array.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>

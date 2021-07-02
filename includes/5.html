@@ -1,0 +1,127 @@
+<section>
+  <h1 class="r-fit-text">reactive</h1>
+</section>
+<section>
+  <div class="r-stack">
+    <pre
+      style="height: 550px"
+    ><code  data-trim class="javascript" data-line-numbers="3|4-7|9-15|17,18,20,21|19,22">
+            import Rx from 'rxjs/Rx';
+        
+            let items = new Rx.Subject();
+            items.onNext(1);
+            items.onNext(2);
+            items.onNext(3);
+            items.onNext(4);
+            
+            const newItems = items
+              .filter(item => item % 2 === 0)
+              .map(item => item + 0.5);
+            
+            newItems.forEach(item =>
+              console.log(item)
+            );
+            
+            items.onNext(5);
+            items.onNext(6);
+            // Output: 6.5
+            items.onNext(7);
+            items.onNext(8);
+            // Output: 8.5
+        
+        
+                </code></pre>
+
+    <img class="fragment" src="img/meme.jpg" />
+  </div>
+</section>
+
+<section>
+  <h4>
+    <strong>
+      Reactive programming is programming with asynchronous data streams that
+      can be created, changed or combined on the go.</strong
+    >
+    The trick is that we are not working with arrays now but streams.
+  </h4>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+
+    ## One does not simply explain a new concept without a car analogy
+    ---
+    ## []
+
+    - arrays are the parking lots that can permanently store cars
+    - when we check the parking lot, we can see all the cars that are presented there
+    - When we log each then we can log each car <strong>currently</strong>  staying in the parking log.
+    
+    ---
+    ## streams
+    - streams are the streets where cars are present but just passing by, they are not <strong>really stored there </strong> 
+    - when we look to the street we only see the car just passing by
+    - the logging in this case is a continuous observation that happens once the stream is defined
+    ---
+    ## operators
+    - filtering
+      - if the driver is a wanted criminal then the police might stop him, and the car basically gets filtered from the stream
+    - mapping
+      - a car wash could be an operator, where the car gets cleaned during the process
+  </textarea>
+</section>
+
+<section>
+  <div class="cols">
+    <div class="col">
+      <pre style="height: 550px"><code  data-trim class="code javascript" >
+        import Rx from 'rxjs/Rx';
+        
+        let items = new Rx.Subject();
+        items.onNext(1);
+        items.onNext(2);
+        items.onNext(3);
+        items.onNext(4);
+        
+        const newItems = items
+          .filter(item => item % 2 === 0)
+          .map(item => item + 0.5);
+        
+        newItems.forEach(item =>
+          console.log(item)
+        );
+        
+        items.onNext(5);
+        items.onNext(6);
+        // Output: 6.5
+        items.onNext(7);
+        items.onNext(8);
+        // Output: 8.5
+  
+  
+            </code></pre>
+    </div>
+
+    <div class="col">
+      <div class="fragment" style="font-size: x-large; padding-top: 10px">
+        <ol>
+          <li>we create a data stream</li>
+          <li>we add some data to the stream</li>
+          <li>
+            we create alternation of the original stream (both streams keep
+            flowing)
+          </li>
+          <li>
+            new values gets added to the original stream, but as the new stream
+            is an alternation of it the original, the new values might pop up
+            (in an alternated way) in the new stream
+          </li>
+          <li>
+            the new stream keeps flowing in parallel with the original one and
+            every time a new items pops up, it will log the value
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>

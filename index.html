@@ -1,40 +1,80 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
 
-		<title>reveal.js</title>
+    <title>reveal.js</title>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/simple.css" />
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/github.css" />
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="css/custom-styles.css" />
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+    <!-- RxMarbles -->
+    <link rel="stylesheet" href="lib/js/rxmarbles/css/normalize.min.css" />
+    <link rel="stylesheet" href="lib/js/rxmarbles/css/main.css" />
+    <script src="lib/js/rxmarbles/js/vendor/modernizr-2.6.2.min.js"></script>
+    <script defer src="lib/js/rxmarbles/js/vendor/CustomElements.js"></script>
+    <script defer src="lib/js/rxmarbles/js/element.js"></script>
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-external="includes/1.html"></section>
+        <section data-external="includes/2.html"></section>
+        <section data-external="includes/3.html"></section>
+        <section data-external="includes/4.html"></section>
+        <section data-external="includes/5.html"></section>
+        <section data-external="includes/6.html"></section>
+        <section data-external="includes/7.html"></section>
+        <section data-external="includes/8.html"></section>
+        <section data-external="includes/9.html"></section>
+        <section data-external="includes/10.html"></section>
+      </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <!-- copy from node_modules/jquery/dist/jquery.min.js -->
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="js/custom-scripts.js"></script>
+    <script src="js/babel.min.js"></script>
+    <!-- copy from node_modules/babel-standalone/babel.min.js -->
+    <script src="js/rx.all.min.js"></script>
+    <!-- copy from node_modules/rx/dist/rx.all.min.js -->
+
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+        dependencies: [
+          {
+            src: "plugin/external/external.js",
+            condition: function () {
+              return !!document.querySelector(
+                "[data-external],[data-external-replace]"
+              );
+            },
+          },
+        ],
+      });
+    </script>
+  </body>
 </html>
