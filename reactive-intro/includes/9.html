@@ -95,15 +95,6 @@ export class List {
 @Input() items: Observable&lt;string[]&gt;;
 }
   </code></pre>
-  <div
-    class="fragment callout position-top"
-    data-callout="span.hljs-string:contains('list')"
-    data-callout-offset-left="220"
-    data-callout-offset-top="90"
-  >
-    <div class="callout-text">Subscribes to the Observable</div>
-    <div class="callout-arrow"></div>
-  </div>
 </section>
 
 <section>
@@ -125,13 +116,4 @@ return this.http.get(this.baseUrl + "/search/users?q=" + term)
 }
 }
   </code></pre>
-  <div
-    class="fragment callout position-right"
-    data-callout="span.hljs-string:contains('search')"
-    data-callout-offset-left="-470"
-    data-callout-offset-top="130"
-  >
-    <div class="callout-arrow"></div>
-    <div class="callout-text">To prevent duplicate requests</div>
-  </div>
 </section>
